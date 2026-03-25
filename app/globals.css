@@ -1,21 +1,28 @@
-html, body {
+/* Reset styles */
+* {
   margin: 0;
   padding: 0;
-  min-height: 100%;
 }
 
 body {
-  min-height: 100vh;
-  background-image: url('/Background_NYC.JPG');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
   font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
 }
-main {
-  max-width: 800px;
-  margin: 0 auto;       /* centers horizontally */
-  padding: 40px;
-  text-align: center;   /* centers text */
+
+header {
+  background-image: url("/Background_NYC.JPG");
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Additional styles... */
