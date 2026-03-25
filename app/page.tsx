@@ -1,6 +1,9 @@
 "use client";
 
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+
 export default function Home() {
+  // Funktion für den CV-Request per Mail
   function requestCV() {
     const email = "Maximilian-cassis@web.de";
     const subject = "CV Request - Maximilian Cassis Krizmanic";
@@ -8,6 +11,7 @@ export default function Home() {
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
+  // Funktion für die Referenzen per Mail
   function requestReferences() {
     const email = "Maximilian-cassis@web.de";
     const subject = "Reference Request - Maximilian Cassis Krizmanic";
@@ -38,10 +42,29 @@ export default function Home() {
 
       <section>
         <h4>CV & References</h4>
-        <div className="button-container">
-          <button className="button" onClick={requestCV}>Request CV</button>
-          <button className="button" onClick={requestReferences}>Request References</button>
-        </div>
+        
+        {/* FALLS NICHT EINGELOGGT: Zeige Login-Aufforderung */}
+        <SignedOut>
+          <p style={{ marginBottom: "20px", opacity: 0.8 }}>
+            Dieser Bereich ist geschützt. Bitte melde dich an, um Zugriff zu erhalten.
+          </p>
+          <SignInButton mode="modal">
+            <button className="button">Login / Register</button>
+          </SignInButton>
+        </SignedOut>
+
+        {/* FALLS EINGELOGGT: Zeige die Buttons zum Anfordern */}
+        <SignedIn>
+          <div className="button-container">
+            <button className="button" onClick={requestCV}>Request CV</button>
+            <button className="button" onClick={requestReferences}>Request References</button>
+          </div>
+          
+          {/* Kleiner User-Button zum Ausloggen */}
+          <div style={{ marginTop: "30px", display: "flex", justifyContent: "center" }}>
+            <UserButton afterSignOutUrl="/" />
+          </div>
+        </SignedIn>
       </section>
 
       <section>
