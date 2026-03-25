@@ -59,7 +59,7 @@ Best regards,`;
         <p>
           Computer Science Student with professional experience in live
           broadcast production and rigging. Contributed to international
-          projects such as Rolling Loud and the UEFA Women's Euro, ensuring
+          projects such as Rolling Loud and the UEFA Womens Euro, ensuring
           stable and reliable system performance. Experienced in working under
           pressure and used to fast-paced environments.
         </p>
