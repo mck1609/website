@@ -1,6 +1,11 @@
 "use client";
 
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { 
+  SignedIn, 
+  SignedOut, 
+  SignInButton, 
+  UserButton 
+} from "@clerk/nextjs";
 
 export default function Home() {
   // Funktion für den CV-Request per Mail
