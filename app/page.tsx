@@ -1,54 +1,123 @@
-"use client";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maximilian Cassis Krizmanic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+  <!-- HEADER -->
+  <header id="home">
+    <h1>Maximilian Cassis Krizmanic</h1>
+    <p>Freelance Broadcast Technician | Rigger | CS Student</p>
 
-export default function Home() {
-  return (
-    <main className="min-h-screen text-white px-6 py-10 flex justify-center">
-      <div className="max-w-2xl w-full">
-        <header className="mb-10">
-          <h1 className="text-3xl font-bold mb-2">
-            Maximilian Cassis Krizmanic
-          </h1>
-          <p className="opacity-80">
-            Freelance Broadcast Technician | Rigger | CS Student
-          </p>
+    <!--
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    -->
+  </header>
 
-          <div className="mt-4 flex gap-3 items-center">
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button className="px-4 py-2 border rounded-lg">Sign In</button>
-              </SignInButton>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About</h2>
+    <p>
+      Computer Science Student with professional experience in live broadcast production and rigging.
+      Contributed to international projects such as Rolling Loud and the UEFA Women's Euro,
+      ensuring stable and reliable system performance.
+      Experienced in working under pressure and used to fast-paced environments.
+    </p>
+  </section>
 
-              <SignUpButton mode="modal">
-                <button className="px-4 py-2 border rounded-lg">Sign Up</button>
-              </SignUpButton>
-            </SignedOut>
+  <!-- CS PROJECTS -->
+  <section id="csprojects">
+    <h2>CS Projects</h2>
 
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </div>
-        </header>
+    <div class="contact-box">
+      <h3>Project 1: Personal Website</h3>
+      <p>
+        Currently building a website to showcase upcoming projects,
+        integrate it with my NAS, and gain experience in web development.
+      </p>
+    </div>
+  </section>
 
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-2 border-b pb-1">About</h2>
-          <p className="opacity-90">
-            Computer Science Student with professional experience in live broadcast
-            production and rigging.
-          </p>
-        </section>
+  <!-- CV + REFERENCES -->
+  <section id="cv">
+    <h2>CV and References</h2>
+    <p>If you would like a copy of my CV or references, please request them via email.</p>
 
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-2 border-b pb-1">Projects</h2>
-          <div className="mt-3 p-4 bg-slate-800 rounded-lg">
-            <h3 className="font-semibold mb-1">Personal Website</h3>
-            <p className="opacity-80">
-              Building a website to showcase projects and learn web development.
-            </p>
-          </div>
-        </section>
+    <div class="button-group">
+      <button class="cv-button" onclick="requestCV()">
+        Request CV
+      </button>
+
+      <button class="cv-button" onclick="requestReferences()">
+        Request References
+      </button>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-container">
+      <div class="contact-top">
+        <a href="mailto:Maximilian-cassis@web.de" class="contact-link">E-Mail</a>
+        <a href="https://instagram.com/max.imilian1609" target="_blank" class="contact-link">Instagram</a>
       </div>
-    </main>
-  );
-}
+
+      <a href="https://linkedin.com/in/Bloodwork0815" target="_blank" class="contact-link linkedin-link">
+        LinkedIn
+      </a>
+    </div>
+  </section>
+
+  <!-- SCRIPT -->
+  <script>
+    function requestCV() {
+      const email = "Maximilian-cassis@web.de";
+      const subject = "CV Request - Maximilian Cassis Krizmanic";
+
+      const body = `Hello Maximilian,
+
+I'd like to request a copy of your CV for consideration. Please find my details below:
+
+Name:
+Company:
+Reason for request:
+
+Best regards,`;
+
+      window.location.href =
+        `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    function requestReferences() {
+      const email = "Maximilian-cassis@web.de";
+      const subject = "Reference Request - Maximilian Cassis Krizmanic";
+
+      const body = `Hello Maximilian,
+
+I'd like to request references regarding your professional experience.
+
+Name:
+Company:
+Position:
+Reason for request:
+
+Best regards,`;
+
+      window.location.href =
+        `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  </script>
+
+</body>
+</html>
