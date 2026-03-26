@@ -2,19 +2,12 @@
 
 export default function Home() {
   const requestCV = () => {
-    window.location.href = "mailto:Maximilian-cassis@web.de?subject=CV Request&body=
-Hello Maximilian,
- I'd like to reuqest a copy of your CV
-
-";
+    window.location.href = "mailto:Maximilian-cassis@web.de?subject=CV Request&body=Hello Maximilian, I'd like to reuqest a copy of your CV";
   };
 
   const requestReferences = () => {
-    window.location.href = "mailto:Maximilian-cassis@web.de?subject=Reference Request&body=
-Hello Maximilian,
-Hello Maximilian, 
- I'd like to reuqest a copy of your References";
-  };
+    window.location.href = "mailto:Maximilian-cassis@web.de?subject=Reference Request&body=Hello Maximilian, I'd like to reuqest a copy of your References";
+ };
 
   return (
     <main>
