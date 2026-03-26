@@ -6,24 +6,36 @@
 
 body {
   font-family: Arial, sans-serif;
+  /* WICHTIG: min-height sorgt dafür, dass das Bild den Screen füllt */
   min-height: 100vh;
+  
+  /* Hintergrund-Setup */
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                     url('/Background_NYC.JPG');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  
+  /* FIXED macht oft Probleme auf dem Handy, daher nur für Desktop aktivieren */
+  background-attachment: scroll; 
+  
   color: white;
-  /* WICHTIG: Kein flex-center mehr, damit es oben links startet */
-  display: block; 
+  
+  /* Flexbox zentriert den 'main' Block horizontal, lässt ihn aber oben starten */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 main {
   width: 90%;
-  max-width: 850px; /* Etwas breiter für den "entzerrten" Look */
-  margin: 0 auto;   /* Zentriert den Inhaltsblock auf der Seite */
-  padding: 80px 20px;
-  text-align: left; /* Text nach links */
+  max-width: 850px;
+  /* padding-top: 10vh schiebt den Text am Desktop ein Stück runter, 
+     damit es nicht am oberen Rand klebt */
+  padding: 10vh 20px 80px 20px;
+  text-align: left;
 }
+
+/* --- AB HIER DEIN BESTEHENDER CODE (Header, h1, h2, etc.) --- */
 
 header {
   margin-bottom: 60px;
@@ -43,13 +55,12 @@ section {
   margin-bottom: 50px;
 }
 
-/* Die weißen Linien unter den Überschriften */
 h2 {
   font-size: 1.4rem;
   font-weight: bold;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  border-bottom: 1px solid white; /* Die Trennlinie */
+  border-bottom: 1px solid white;
   display: block;
 }
 
@@ -58,7 +69,6 @@ p {
   margin-bottom: 15px;
 }
 
-/* Buttons & Links */
 .button-container {
   display: flex;
   gap: 15px;
@@ -66,7 +76,7 @@ p {
 }
 
 .button {
-  background: rgba(255, 255, 255, 0.1); /* Leicht transparentes Weiß */
+  background: rgba(255, 255, 255, 0.1);
   border: 1px solid white;
   color: white;
   padding: 8px 16px;
@@ -82,7 +92,7 @@ p {
 
 .contact-links {
   display: flex;
-  flex-direction: column; /* Links untereinander wie im Screenshot */
+  flex-direction: column;
   gap: 8px;
 }
 
@@ -90,4 +100,12 @@ p {
   color: white;
   text-decoration: underline;
   font-size: 1rem;
+}
+
+/* --- OPTIONALER DESKTOP-FIX --- */
+@media (min-width: 1024px) {
+  body {
+    /* Am Desktop darf das Bild wieder stehen bleiben beim Scrollen */
+    background-attachment: fixed;
+  }
 }
