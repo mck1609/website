@@ -1,56 +1,49 @@
 "use client";
 
 export default function Home() {
-  function requestCV() {
-    const email = "Maximilian-cassis@web.de";
-    const subject = "CV Request - Maximilian Cassis Krizmanic";
-    const body = "Hello, I would like to request your CV.";
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
+  const requestCV = () => {
+    window.location.href =
+      "mailto:Maximilian-cassis@web.de?subject=CV Request&body=Hello Maximilian,%0D%0A%0D%0AI would like to request your CV.%0D%0A%0D%0AKind regards,";
+  };
 
-  function requestReferences() {
-    const email = "Maximilian-cassis@web.de";
-    const subject = "Reference Request - Maximilian Cassis Krizmanic";
-    const body = "Hello, I would like to request your references.";
-    window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
+  const requestReferences = () => {
+    window.location.href =
+      "mailto:Maximilian-cassis@web.de?subject=Reference Request&body=Hello Maximilian,%0D%0A%0D%0AI would like to request your references.%0D%0A%0D%0AKind regards,";
+  };
 
   return (
-    <main>
-      <header>
-        <h1>Maximilian Cassis Krizmanic</h1>
-        <p className="subheader">Freelance Broadcast Technician | Rigger | CS Student</p>
-      </header>
+    <main style={{ padding: "40px" }}>
+      <h1>Maximilian Cassis Krizmanic</h1>
+      <p>Freelance Broadcast Technician | Rigger | CS Student</p>
 
-      <section>
-        <h4>About</h4>
-        <p className="about-text">
-          Computer Science student with professional experience in live broadcast
-          production and rigging. Worked on international projects such as Rolling
-          Loud and the UEFA Women's Euro.
-        </p>
-      </section>
+      <h2>About</h2>
+      <p>
+        Computer Science student with professional experience in live broadcast
+        production and rigging.
+      </p>
 
-      <section>
-        <h4>Projects</h4>
-        <p>Currently building this website and integrating a NAS.</p>
-      </section>
+      <h2>Projects</h2>
+      <p>Currently building this website.</p>
 
-      <section>
-        <h4>CV & References</h4>
-        <div className="button-container">
-          <button className="button" onClick={requestCV}>Request CV</button>
-          <button className="button" onClick={requestReferences}>Request References</button>
-        </div>
-      </section>
+      <h2>CV & References</h2>
+      <button onClick={requestCV}>Request CV</button>
+      <button onClick={requestReferences} style={{ marginLeft: "10px" }}>
+        Request References
+      </button>
 
-      <section>
-        <h4>Contact</h4>
-        <div className="contact-links">
-          <a href="mailto:Maximilian-cassis@web.de">Email</a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-      </section>
+      <h2>Contact</h2>
+      <p>
+        <a href="mailto:Maximilian-cassis@web.de">Email</a>
+      </p>
+      <p>
+        <a
+          href="https://www.linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      </p>
     </main>
   );
 }
