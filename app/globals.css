@@ -9,15 +9,11 @@ body {
   /* WICHTIG: min-height sorgt dafür, dass das Bild den Screen füllt */
   min-height: 100vh;
   
-  /* Hintergrund-Setup */
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                     url('/Background_NYC.JPG');
   background-size: cover;
   background-position: center;
-  
-  /* FIXED macht oft Probleme auf dem Handy, daher nur für Desktop aktivieren */
-  background-attachment: scroll; 
-  
+    
   color: white;
   
   /* Flexbox zentriert den 'main' Block horizontal, lässt ihn aber oben starten */

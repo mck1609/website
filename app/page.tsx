@@ -38,7 +38,8 @@ export default function Home() {
         <h2>Contact</h2>
         <div className="contact-links">
           <a href="mailto:Maximilian-cassis@web.de">Email</a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+	<a href="https://www.instagram.com/max.imilian1609/">Instagram</a>
+          <a href="https://www.linkedin.com/in/maximilian0815" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </section>
     </main>
