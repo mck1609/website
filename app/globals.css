@@ -6,7 +6,6 @@
 
 body {
   font-family: Arial, sans-serif;
-  /* WICHTIG: min-height sorgt dafür, dass das Bild den Screen füllt */
   min-height: 100vh;
   
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
@@ -15,8 +14,8 @@ body {
   background-position: center;
     
   color: white;
-  
-  /* Flexbox zentriert den 'main' Block horizontal, lässt ihn aber oben starten */
+
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,13 +24,12 @@ body {
 main {
   width: 90%;
   max-width: 850px;
-  /* padding-top: 10vh schiebt den Text am Desktop ein Stück runter, 
-     damit es nicht am oberen Rand klebt */
+
   padding: 10vh 20px 80px 20px;
   text-align: left;
 }
 
-/* --- AB HIER DEIN BESTEHENDER CODE (Header, h1, h2, etc.) --- */
+
 
 header {
   margin-bottom: 60px;
@@ -98,10 +96,10 @@ p {
   font-size: 1rem;
 }
 
-/* --- OPTIONALER DESKTOP-FIX --- */
+
 @media (min-width: 1024px) {
   body {
-    /* Am Desktop darf das Bild wieder stehen bleiben beim Scrollen */
+
     background-attachment: fixed;
   }
 }
