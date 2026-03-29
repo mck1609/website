@@ -1,18 +1,17 @@
-import type { Metadata } from "next"; // All imports at the top
+import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
-// 1. Define your Metadata here
+
 export const metadata: Metadata = {
-  title: 'Your Site Name',
+  title: 'Krizmanic Portfolio',
   icons: {
-    icon: '/Background_NYC.JPG',      // Tab Icon
-    apple: '/Background_NYC.JPG',     // Favorites/Bookmark Preview
-    shortcut: '/Background_NYC.JPG',  // Extra compatibility
+    icon: '/Background_NYC.JPG',
+    apple: '/Background_NYC.JPG',
   },
 }
 
-// 2. Then your Layout function
+
 export default function RootLayout({
   children,
 }: {
